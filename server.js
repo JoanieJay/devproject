@@ -26,7 +26,12 @@ if (process.env.NODE_ENV === "development") {
 
 // Mount routers
 app.use("/api/v1/bootcamps", bootcamps);
-// see me
+
+app.get("/", (req, res) => {
+  const msg = "Hello from Jonnie Anty Ijeo API!";
+  // res.send(msg);
+  res.status(200).json({ success: true, data: msg });
+});
 
 app.use(errorHandler);
 
