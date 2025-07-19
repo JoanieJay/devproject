@@ -27,7 +27,9 @@ exports.getBootcamp = asyncHandler(async (req, res, next) => {
 // @desc   Create new bootcamp
 // @route  POST /api/v1/bootcamps
 // @access Private
+
 exports.createBootcamp = asyncHandler(async (req, res, next) => {
+  console.log("Website from request body:", req.body.website);
   // Add user to req.body
   req.body.user = req.user.id;
 
